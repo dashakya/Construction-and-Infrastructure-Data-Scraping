@@ -14,6 +14,12 @@ Before running the script, ensure you have Python installed on your system along
 - `spacy`
 - `en_core_web_sm` (a spaCy language model)
 
+You can install these packages using `pip`:
+
+```bash
+pip install requests beautifulsoup4 spacy
+python -m spacy download en_core_web_sm
+```
 ##  To install the dependencies listed in requirements.txt, run the following command:
 
 pip install -r requirements.txt
@@ -35,13 +41,13 @@ After it ,apply en_core_web_sm model to each row of details column to fetch NER
 At last , final.csv file will be generated  that contains attributes:
 original_id	aug_id	country_name	country_code	region_name	region_code	latitude	longitude	url	title	description	status	timestamp	timestamp_label	budget	budget_label	currency	sector	subsector	document_urls
 
-### Input:
 
+
+### Input:
 https://www.ci.richmond.ca.us/1404/Major-Projects
 
 
 ### Output:
-
 original_id	aug_id	country_name	country_code	region_name	region_code	latitude	longitude	url	title	...	timestamp	timestamp_label	budget	budget_label	currency	sector	subsector	document_urls	org	date
 0	na	na	United States	US	Richmond	na	na	na	http://www.ci.richmond.ca.us/viaverdiproject	Via Verdi Slope Stabilization Project	...	na	na	na	na	na	na	na	na	na	na
 1	na	na	United States	US	na	na	na	na	https://www.ci.richmond.ca.us/4486/Travel-Safe...	Travel Safe Richmond	...	na	na	na	na	na	na	na	na	na	na
@@ -49,9 +55,3 @@ original_id	aug_id	country_name	country_code	region_name	region_code	latitude	lo
 3	na	na	United States	US	Baxter Creek	na	na	na	http://www.ci.richmond.ca.us/index.aspx?NID=2443	Richmond Greenway Gap Closure Project	...	na	na	na	na	na	na	na	na	na	na
 4	na	na	United States	US	Project Area	na	na	na	http://www.ci.richmond.ca.us/2595/Mathieu-Cour...	Mathieu Court Alley Play Street	...	na	na	na	na	na	na	na	na	na	na
 5 rows × 22 columns
-
-
-
-
-
-
