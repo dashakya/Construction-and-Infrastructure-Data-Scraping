@@ -1,6 +1,4 @@
-
-Requirements to install: 
-
-!pip install spacy
-!python -m spacy download en_core_web_sm
-
+requests==2.31.0
+beautifulsoup4==4.12.2
+spacy==3.6.1
+en-core-web-sm==3.7.1
