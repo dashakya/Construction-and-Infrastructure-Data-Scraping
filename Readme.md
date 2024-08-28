@@ -12,7 +12,15 @@ Before running the script, ensure you have Python installed on your system along
 - `requests`
 - `beautifulsoup4`
 - `spacy`
-- `en_core_web_sm` (a spaCy language model)
+
+# Setup
+
+This project uses the `en_core_web_sm` language model for SpaCy.
+
+Run the following command to download and install the en_core_web_sm model:
+
+- !python -m spacy download en_core_web_sm
+
 
 ##  To install the dependencies listed in requirements.txt, run the following command:
 

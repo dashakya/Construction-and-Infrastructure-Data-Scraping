@@ -1,5 +1,8 @@
 requests==2.31.0
 beautifulsoup4==4.12.2
-spacy==3.6.1
-en-core-web-sm==3.7.1
+spacy==3.7.6
+pycountry==22.3.5
+pandas==2.2.2
+
+
 
