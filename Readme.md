@@ -14,12 +14,6 @@ Before running the script, ensure you have Python installed on your system along
 - `spacy`
 - `en_core_web_sm` (a spaCy language model)
 
-You can install these packages using `pip`:
-
-```bash
-pip install requests beautifulsoup4 spacy
-python -m spacy download en_core_web_sm
-```
 ##  To install the dependencies listed in requirements.txt, run the following command:
 
 pip install -r requirements.txt
