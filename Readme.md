@@ -7,7 +7,7 @@ and identifies named entities within that content.
 
 ## Prerequisites
 
-Before running the script, ensure you have Python installed on your system along with the following packages:
+Before running the script, ensure you have Python3.11 installed on your system along with the following packages:
 
 - `requests`
 - `beautifulsoup4`
@@ -26,8 +26,6 @@ Run the following command to download and install the en_core_web_sm model:
 
 pip install -r requirements.txt
 
-
-
 ## Description:
 
 requests - For making HTTP requests to fetch web pages.
@@ -40,7 +38,11 @@ As soon as data scraped a csv file named 'scraped.csv' will form that contains '
 
 After it ,apply en_core_web_sm model to each row of details column to fetch NER
 
-At last , final.csv file will be generated  that contains attributes:
+Make connection with MySql database using sqlalchemy
+
+At last, data will get stored in database :
+
+Table columns :
 original_id	aug_id	country_name	country_code	region_name	region_code	latitude	longitude	url	title	description	status	timestamp	timestamp_label	budget	budget_label	currency	sector	subsector	document_urls
 
 
@@ -50,15 +52,15 @@ https://www.ci.richmond.ca.us/1404/Major-Projects
 
 
 ### Output:
-| original_id | aug_id | country_name | country_code | region_name | region_code | latitude | longitude | url                                                                                             | title                                 | ... | timestamp | timestamp_label | budget | budget_label | currency | sector | subsector | document_urls | org | date |
-|-------------|--------|--------------|--------------|-------------|-------------|----------|-----------|--------------------------------------------------------------------------------------------------|---------------------------------------|-----|-----------|----------------|--------|--------------|----------|--------|-----------|---------------|-----|------|
-| na          | na     | United States| US           | Richmond    | na          | na       | na        | [Via Verdi Slope Stabilization Project](http://www.ci.richmond.ca.us/viaverdiproject)            | Via Verdi Slope Stabilization Project| ... | na        | na             | na     | na           | na       | na     | na        | na            | na  | na   |
-| na          | na     | United States| US           | na          | na          | na       | na        | [Travel Safe Richmond](https://www.ci.richmond.ca.us/4486/Travel-Safe)                           | Travel Safe Richmond                  | ... | na        | na             | na     | na           | na       | na     | na        | na            | na  | na   |
-| na          | na     | United States| US           | na          | na          | na       | na        | [Atlas Road Industrial Building Project](http://www.ci.richmond.ca.us/3001/Atlas-Road-I)        | Atlas Road Industrial Building Project| ... | na        | na             | na     | na           | na       | na     | na        | na            | na  | na   |
-| na          | na     | United States| US           | Baxter Creek| na          | na       | na        | [Richmond Greenway Gap Closure Project](http://www.ci.richmond.ca.us/index.aspx?NID=2443)        | Richmond Greenway Gap Closure Project | ... | na        | na             | na     | na           | na       | na     | na        | na            | na  | na   |
-| na          | na     | United States| US           | Project Area| na          | na       | na        | [Mathieu Court Alley Play Street](http://www.ci.richmond.ca.us/2595/Mathieu-Court)               | Mathieu Court Alley Play Street       | ... | na        | na             | na     | na           | na       | na     | na        | na            | na  | na   |
 
-*Note:* Fields with `na` indicate that the data was not available.
+| original_id | aug_id | country_name   | country_code | region_name   | region_code | latitude | longitude | url                                                      | title                                      | ... | timestamp | timestamp_label | budget | budget_label | currency | sector | subsector | document_urls                                               | org | date |
+|-------------|--------|----------------|--------------|---------------|-------------|----------|-----------|----------------------------------------------------------|--------------------------------------------|-----|-----------|-----------------|--------|--------------|----------|--------|-----------|-------------------------------------------------------------|-----|------|
+| na          | na     | United States  | US           | Richmond      | na          | na       | na        | [Link](http://www.ci.richmond.ca.us/viaverdiproject)     | Via Verdi Slope Stabilization Project       | ... | na        | na              | na     | na           | na       | na     | na        | [Document](http://www.ci.richmond.ca.us/DocumentCenter/Vi...) | na  | na   |
+| na          | na     | United States  | US           | na            | na          | na       | na        | [Link](https://www.ci.richmond.ca.us/4486/Travel-Safe)  | Travel Safe Richmond                       | ... | na        | na              | na     | na           | na       | na     | na        | [Document](https://www.ci.richmond.ca.us/DocumentCenter/V...) | na  | na   |
+| na          | na     | United States  | US           | na            | na          | na       | na        | [Link](http://www.ci.richmond.ca.us/3001/Atlas-Road-I)  | Atlas Road Industrial Building Project      | ... | na        | na              | na     | na           | na       | na     | na        | [Document](http://www.ci.richmond.ca.us/3001/Atlas-Road-I...) | na  | na   |
+| na          | na     | United States  | US           | Baxter Creek  | na          | na       | na        | [Link](http://www.ci.richmond.ca.us/index.aspx?NID=2443) | Richmond Greenway Gap Closure Project      | ... | na        | na              | na     | na           | na       | na     | na        | [Email](mailto:lina_velasco@ci.richmond.ca.us) [Link](http://...) | na  | na   |
+| na          | na     | United States  | US           | Project Area  | na          | na       | na        | [Link](http://www.ci.richmond.ca.us/2595/Mathieu-Cour) | Mathieu Court Alley Play Street            | ... | na        | na              | na     | na           | na       | na     | na        | [Document](https://kaboom.org/playability/play_everywhere...) | na  | na   |
+
 
 22 columns
 
